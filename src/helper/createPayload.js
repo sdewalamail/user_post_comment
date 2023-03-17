@@ -1,4 +1,3 @@
-
 const excludeGlobal = [
   "__v",
   "createdAt",
@@ -11,21 +10,24 @@ const excludeGlobal = [
   "isActive",
   "updatedBy",
   "isActive",
-]
-const createPayload = function (data = {}, exclude = []) {
-  exclude = [
-    ...exclude,
-    ...excludeGlobal
-  ];
-//   console.dir(data, { depth: 3 });
+];
+const createPayload = function (data = {}, exclude = [], include = []) {
+  if (!Array.isArray(exclude)) {
+    exclude = [String(exclude)];
+  }
+  if (!Array.isArray(include)) {
+    include = [String(include)];
+  }
+  exclude = [...exclude, ...excludeGlobal];
+
+  //   console.dir(data, { depth: 3 });
   if ("toJSON" in data) {
     data = { ...data.toJSON() };
   }
 
   for (const field of exclude) {
-    if (field in data) {
-      delete data[field];
-    }
+    if (include.includes(field)) continue;
+    if (field in data) delete data[field];
   }
   // console.log(data);
   return data;
@@ -35,7 +37,7 @@ const createPayloadForArray = function (datas = [], exclude = []) {
   let rv = [];
 
   for (let data of datas) {
-    rv.push(createPayload(data,exclude =[]));
+    rv.push(createPayload(data, (exclude = [])));
   }
   //   console.log(rv);
   return rv;
