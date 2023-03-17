@@ -6,7 +6,7 @@
         "$ref": "./user/login.json"
     },
     "createPost":{
-        "$ref": "./post/createPost.json"
+        "$ref": "./post/updatePost.json"
     },
     "updatePost":{
         "$ref": "./post/updatePost.json"

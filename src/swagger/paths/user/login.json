@@ -1,31 +1,36 @@
 {
-    "post":{
-      "tags": ["User"],
-      "summary": "Sign here",
-      "operationId": "Signin form",
-  
-      "requestBody": {
-        "content": {
-          "application/x-www-form-urlencoded": {
-            "schema": {
-              "$ref": "#components/schemas/Login"
-            }
-          }
-        }
-      },
-      "responses": {
-        "200": {
-          "description": "Signed successfully.",
-          "content": {
-            "application/json": { }
+  "post": {
+    "tags": ["User"],
+    "summary": "Sign here",
+    "operationId": "Signin form",
+
+    "requestBody": {
+      "content": {
+        "application/json": {
+          "schema": {
+            "$ref": "#components/schemas/Login"
           }
         },
-        "401": {
-          "description": "Please give valid email and password :( ",
-          "content": {
-            "application/json": {}
+        "application/x-www-form-urlencoded": {
+          "schema": {
+            "$ref": "#components/schemas/Login"
           }
         }
       }
-    }     
+    },
+    "responses": {
+      "200": {
+        "description": "Signed successfully.",
+        "content": {
+          "application/json": {}
+        }
+      },
+      "401": {
+        "description": "Please give valid email and password :( ",
+        "content": {
+          "application/json": {}
+        }
+      }
+    }
   }
+}
