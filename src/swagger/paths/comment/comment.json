@@ -23,6 +23,11 @@
     ],
     "requestBody": {
       "content": {
+        "application/json": {
+          "schema": {
+            "$ref": "#components/schemas/Comments"
+          }
+        },
         "application/x-www-form-urlencoded": {
           "schema": {
             "$ref": "#components/schemas/Comments"
