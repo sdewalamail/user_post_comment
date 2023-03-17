@@ -1,0 +1,40 @@
+{
+    "get": {
+        "tags": ["Post"],
+        "summary": "Get all the posts",
+        "operationId": "GetAllPosts",
+
+      "security": [
+        {
+          "BearerAuth": []
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "Post fetched.",
+          "content": {
+            "application/json": {}
+          }
+        },
+        "400": {
+          "description": "Bad request",
+          "content": {
+            "application/json": {}
+          }
+        },
+        "403": {
+          "description": "Unauthorized",
+          "content": {
+            "application/json": {}
+          }
+        },
+        "422": {
+          "description": "Invalid Parameter",
+          "content": {
+            "application/json": {}
+          }
+        }
+      }
+    }
+  }
+  

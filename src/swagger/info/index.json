@@ -1,0 +1,16 @@
+{
+  "title": "Social Media API",
+  "summary": "A Node.js app with user comments on posts, user authentication, post creation, comment creation, viewing posts and comments, and editing/deleting posts and comments.",
+  "description": "This API allows users to create accounts, create posts, and leave comments on posts made by other users. Users can also edit and delete their own posts and comments. Authentication is required for some endpoints.",
+  "termsOfService": "By using this API, you agree to our terms of service.",
+  "contact": {
+    "name": "Social Media Support",
+    "url": "https://github.com/sdewalamail",
+    "email": "sdewalamail@gmail.com"
+  },
+  "license": {
+    "name": "MIT",
+    "url": "https://opensource.org/licenses/MIT"
+  },
+  "version": "1.0.0"
+}

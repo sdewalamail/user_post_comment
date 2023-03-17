@@ -1,0 +1,53 @@
+
+{
+    "get": {
+        "tags": ["Comment"],
+        "summary": "Get all the post comments   ",
+        "operationId": "GetAllComments",
+
+      "security": [
+        {
+          "BearerAuth": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "postId",
+          "in": "path",
+          "description": "Get all the comment on particular post",
+          "required": true,
+          "schema": {
+            "type": "string"
+          },
+          "style": "simple"
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "Comment fetched.",
+          "content": {
+            "application/json": {}
+          }
+        },
+        "400": {
+          "description": "Bad request",
+          "content": {
+            "application/json": {}
+          }
+        },
+        "403": {
+          "description": "Unauthorized",
+          "content": {
+            "application/json": {}
+          }
+        },
+        "422": {
+          "description": "Invalid Parameter",
+          "content": {
+            "application/json": {}
+          }
+        }
+      }
+    }
+  }
+  

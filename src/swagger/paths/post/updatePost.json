@@ -1,0 +1,61 @@
+{
+    "put": {
+      "tags": ["Post"],
+      "summary": "You can update the post",
+      "operationId": "updatePost",
+  
+      "security": [
+        {
+          "BearerAuth": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "description": "Enter the Post id for update the post",
+          "required": true,
+          "schema": {
+            "type": "string"
+          },
+          "style": "simple"
+        }
+      ],
+      "requestBody": {
+        "content": {
+          "application/x-www-form-urlencoded": {
+            "schema": {
+              "$ref": "#components/schemas/updatePost"
+            }
+          }
+        }
+      },
+      "responses": {
+        "200": {
+          "description": "Post updated successfully.",
+          "content": {
+            "application/json": {}
+          }
+        },
+        "400": {
+          "description": "Bad request",
+          "content": {
+            "application/json": {}
+          }
+        },
+        "403": {
+          "description": "Unauthorized",
+          "content": {
+            "application/json": {}
+          }
+        },
+        "422": {
+          "description": "Invalid Parameter",
+          "content": {
+            "application/json": {}
+          }
+        }
+      }
+    }
+  }
+  

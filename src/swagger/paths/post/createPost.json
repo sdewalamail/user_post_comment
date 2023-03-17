@@ -1,0 +1,48 @@
+{
+  "post": {
+    "tags": ["Post"],
+    "summary": "You can create post here",
+    "operationId": "Post create",
+
+    "security": [
+      {
+        "BearerAuth": []
+      }
+    ],
+    "requestBody": {
+      "content": {
+        "application/x-www-form-urlencoded": {
+          "schema": {
+            "$ref": "#components/schemas/createPost"
+          }
+        }
+      }
+    },
+    "responses": {
+      "200": {
+        "description": "Post added successfully.",
+        "content": {
+          "application/json": {}
+        }
+      },
+      "400": {
+        "description": "Bad request",
+        "content": {
+          "application/json": {}
+        }
+      },
+      "403": {
+        "description": "Unauthorized",
+        "content": {
+          "application/json": {}
+        }
+      },
+      "422": {
+        "description": "Invalid Parameter",
+        "content": {
+          "application/json": {}
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+    "/signup": {
+        "$ref": "./user/signup.json"
+    },
+    "/login" :{
+        "$ref": "./user/login.json"
+    },
+    "/posts/create" :{
+        "$ref": "./post/createPost.json"
+    },
+    "/posts":{
+        "$ref": "./post/getPost.json"
+    },
+    "/comments/create/{postId}":{
+        "$ref": "./comment/comment.json"
+    },
+    "/posts/delete/{id}":{
+        "$ref": "./post/deletePost.json"
+    },
+    "/posts/update/{id}":{
+        "$ref": "./post/updatePost.json"
+    },  
+    "/comments/{postId}":{
+        "$ref": "./comment/getCommentById.json"
+    },
+    "/comments/delete/{postId}/{commentId}":{
+        "$ref": "./comment/deleteComment.json"
+    },
+    "/comments/update/{id}":{
+        "$ref": "./comment/updateComment.json"
+    }
+}

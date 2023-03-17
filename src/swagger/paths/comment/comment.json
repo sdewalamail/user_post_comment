@@ -1,0 +1,60 @@
+{
+  "post": {
+    "tags": ["Comment"],
+    "summary": "You can comment on post",
+    "operationId": "comment create",
+
+    "security": [
+      {
+        "BearerAuth": []
+      }
+    ],
+    "parameters": [
+      {
+        "name": "postId",
+        "in": "path",
+        "description": "ID of post on which comment to be create",
+        "required": true,
+        "schema": {
+          "type": "string"
+        },
+        "style": "simple"
+      }
+    ],
+    "requestBody": {
+      "content": {
+        "application/x-www-form-urlencoded": {
+          "schema": {
+            "$ref": "#components/schemas/Comments"
+          }
+        }
+      }
+    },
+    "responses": {
+      "200": {
+        "description": "Comment added successfully.",
+        "content": {
+          "application/json": {}
+        }
+      },
+      "400": {
+        "description": "Bad request",
+        "content": {
+          "application/json": {}
+        }
+      },
+      "403": {
+        "description": "Unauthorized",
+        "content": {
+          "application/json": {}
+        }
+      },
+      "422": {
+        "description": "Invalid Parameter",
+        "content": {
+          "application/json": {}
+        }
+      }
+    }
+  }
+}

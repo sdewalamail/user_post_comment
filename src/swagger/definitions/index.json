@@ -1,0 +1,17 @@
+{
+    "User": {
+        "$ref": "./user/user.json"
+    },
+    "Login":{
+        "$ref": "./user/login.json"
+    },
+    "createPost":{
+        "$ref": "./post/createPost.json"
+    },
+    "updatePost":{
+        "$ref": "./post/updatePost.json"
+    },
+     "Comments":{
+        "$ref": "./comment/comments.json"
+    }
+}
