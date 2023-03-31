@@ -2,7 +2,7 @@ const bcrypt = require("bcrypt");
 
 const User = require("../model/user");
 const {createPayload} = require("../helper/createPayload");
-
+const {sendEmail } = require("../helper/nodeMailer");
 // :::::::::::  SignUp :::::::::::
 const singUp = async (req, res) => {
   try {
@@ -15,6 +15,11 @@ const singUp = async (req, res) => {
        newUser.role = 'admin';
        await newUser.save();
     };
+      sendEmail({
+      to: userPayload.email,
+      subject: "Email verification",
+      text: `You are registered successfully with us please verify your email by using this otp ${otp} .`,
+    });
 
     res.status(200).send({ status:200, userCreated: createPayload(newUser)});
 
